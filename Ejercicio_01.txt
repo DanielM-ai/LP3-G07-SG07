@@ -1,0 +1,76 @@
+LP3-G07-SG07 (Mansilla Tito - Márquez Delgado)
+Ejercicio 01: Crea una función en Python, C++ y Java que reciba un arreglo como parámetro y devuelva la
+suma de todos los elementos del arreglo.
+
+//Código en Python -------------------------- PYTHON ------------------------------------|
+
+def suma_arreglo(arreglo):
+    suma = 0
+    for num in arreglo:
+        suma += num
+    return suma
+
+# Programa principal
+n = int(input("¿Cuántos elementos tendrá el arreglo?: "))
+arreglo = []
+for i in range(n):
+    valor = int(input(f"Ingrese el elemento {i+1}: "))
+    arreglo.append(valor)
+
+print("Suma:", suma_arreglo(arreglo))
+
+
+//Código en C++ -------------------------------------- C++ -------------------------------|
+#include <iostream>
+using namespace std;
+
+int sumaArreglo(int arreglo[], int tam) {
+    int suma = 0;
+    for (int i = 0; i < tam; i++) {
+        suma += arreglo[i];
+    }
+    return suma;
+}
+
+int main() {
+    int n;
+    cout << "Cuantos elementos va a tener el arreglo?: ";
+    cin >> n;
+
+    int arreglo[n]; // arreglo de tamaño variable (válido en compiladores modernos)
+    for (int i = 0; i < n; i++) {
+        cout << "Ingresa el elemento " << i + 1 << ": ";
+        cin >> arreglo[i];
+    }
+
+    cout << "La suma de los elementos del arreglo es: " << sumaArreglo(arreglo, n) << endl;
+}
+
+//Código en JAVA ----------------------------------------- JAVA ---------------------------|
+import java.util.Scanner;
+
+public class RecibeYsumaArreglo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("¿Cuántos elementos tendrá el arreglo?: ");
+        int n = scanner.nextInt();
+
+        //Completamos nuestro arreglo:
+        int miArreglo[] = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Ingrese el elemento " + (i + 1) + ": ");
+            miArreglo[i] = scanner.nextInt();
+        }
+
+        System.out.println("Suma: " + sumaArreglo(miArreglo));
+    }
+    
+    //Usamos un metodo para hacer la suma.
+    public static int sumaArreglo(int[] miArreglo) {
+        int suma = 0;
+        for (int num : miArreglo) {
+            suma += num;
+        }
+        return suma;
+    }
+}

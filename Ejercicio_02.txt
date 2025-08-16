@@ -1,0 +1,44 @@
+Ejercicio_02_Sesión_01 : 
+El usuario ingresará números en un arreglo unidimensional de 10, cada número que ingrese el
+usuario debe ser mayor al anterior. Guarde estos números en el arreglo.
+
+
+import java.util.Scanner;
+
+public class NumMayorAlAnterior {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresa 10 numeros. Cada numero que ingresas debe ser mayor al anterior:");
+        int numerosArr[] = new int[10];
+
+        
+        //Recorremos el arreglo e ingresamos datos
+        for (int i = 0; i < numerosArr.length; i++) {
+            if (i == 0) {	
+                System.out.print("Numero 1: ");
+                numerosArr[i] = scanner.nextInt();
+            } 
+            else {	
+                int numero;
+                do {
+                    System.out.print("Numero " + (i + 1) + " (Debera ser mayor que " + numerosArr[i - 1] + "): ");
+                    numero = scanner.nextInt();
+                    if (numero <= numerosArr[i - 1]) {
+                        System.out.println("Error: el numero a ingresar debe ser mayor que " + numerosArr[i - 1] + ". Prueba de nuevo.");
+                    }
+                } while (numero <= numerosArr[i - 1]);
+                numerosArr[i] = numero;
+            }
+        }
+
+        // Mostrar el arreglo final
+        System.out.println("\nEl arreglo está conformado por los siguientes elementos ingresados:");
+        for (int num : numerosArr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+
+

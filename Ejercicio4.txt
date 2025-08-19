@@ -1,0 +1,28 @@
+package LP3;
+
+import java.util.Scanner; 
+public class Ejercicio4 {
+
+	public static double encontrarMenor(double a, double b, double c) {
+        return Math.min(a, Math.min(b, c));
+    }
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Introduce el primer número: ");
+        double numero1 = teclado.nextDouble();
+
+        System.out.print("Introduce el segundo número: ");
+        double numero2 = teclado.nextDouble();
+
+        System.out.print("Introduce el tercer número: ");
+        double numero3 = teclado.nextDouble();
+
+        double menor = encontrarMenor(numero1, numero2, numero3);
+
+        System.out.println("El menor de los tres números es: " + menor);
+
+        teclado.close();
+    }
+}

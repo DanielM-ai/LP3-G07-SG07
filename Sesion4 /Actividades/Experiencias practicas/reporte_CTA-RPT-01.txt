@@ -1,0 +1,8 @@
+--- Reporte de Transacciones ---
+Número de Cuenta: CTA-RPT-01
+Titular: Elena Rios
+Saldo Final: 350.0
+---------------------------------
+Historial:
+- Creación de cuenta con saldo: 100.0
+- Depósito: +250.0

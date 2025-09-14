@@ -1,0 +1,45 @@
+
+package LP3;
+
+import java.util.Scanner;
+
+public class Ejercicio5 {
+
+    public static double calcularCargo(double horas) {
+        if (horas <= 0) {
+            return 0.0;
+        }
+
+        double cargoTotal;
+        final double costoPrimeraHora = 3.00;
+        final double costoHoraAdicional = 0.50;
+        final double cargoMaximo = 12.00;
+
+        double horasRedondeadas = Math.ceil(horas);
+
+        if (horasRedondeadas <= 1) {
+            cargoTotal = costoPrimeraHora;
+        } else {
+            cargoTotal = costoPrimeraHora + (horasRedondeadas - 1) * costoHoraAdicional;
+        }
+
+        if (cargoTotal > cargoMaximo) {
+            return cargoMaximo;
+        } else {
+            return cargoTotal;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Ingrese el número de horas estacionado: ");
+        double horasIngresadas = teclado.nextDouble();
+
+        double totalAPagar = calcularCargo(horasIngresadas);
+
+        System.out.printf("El cargo total es: S/ %.2f%n", totalAPagar);
+
+        teclado.close();
+    }
+}

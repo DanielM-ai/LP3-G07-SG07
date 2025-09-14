@@ -1,0 +1,32 @@
+LP3-G07-SG07 (Mansilla Tito - Márquez Delgado)
+Experiencia_02_Sesión_01 : Palíndromos. Escribe un programa que verifique si un número entero es un palíndromo. Un número es
+un palíndromo si se lee igual de izquierda a derecha que de derecha a izquierda:
+
+import java.util.Scanner;
+public class Palindromo {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Introduce un numero entero: ");
+		int numero = entrada.nextInt(); 
+		
+		int original = numero; 		//Guarda el numero ingresado para compararlo al final
+		int inverso = 0; 		//empieza en 0, y aquí se guardará el número al revés.
+		
+		
+	//Bucle para invertir el numero:
+		while (numero != 0) {
+			inverso = inverso * 10 + (numero % 10);
+			numero /= 10; 		//Divide entre 10 para eliminar el último dígito.
+		}
+		
+		if (original == inverso) {
+			System.out.println(original + " es un palindromo."); 
+		}
+		else {
+			System.out.println(original + " no es un palindromo.");
+		}
+
+	}
+
+}

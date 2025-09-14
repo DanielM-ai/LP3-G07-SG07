@@ -1,0 +1,34 @@
+package LP3;
+
+import java.util.Scanner;
+
+public class Ejercicio5 {
+
+    
+    public static int aSegundos(int horas, int minutos, int segundos) {
+        int segundosPorHora = horas * 3600;
+        int segundosPorMinuto = minutos * 60;
+        return segundosPorHora + segundosPorMinuto + segundos;
+    }
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("--- Convertidor de Tiempo a Segundos ---");
+
+        System.out.print("Ingrese la cantidad de horas: ");
+        int h = teclado.nextInt();
+
+        System.out.print("Ingrese la cantidad de minutos: ");
+        int m = teclado.nextInt();
+
+        System.out.print("Ingrese la cantidad de segundos: ");
+        int s = teclado.nextInt();
+
+        int totalSegundos = aSegundos(h, m, s);
+
+        System.out.println("\nEl equivalente total es: " + totalSegundos + " segundos.");
+
+        teclado.close();
+    }
+}

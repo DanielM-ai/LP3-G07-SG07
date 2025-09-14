@@ -1,0 +1,28 @@
+LP3-G07-SG07 (Mansilla Tito - Márquez Delgado)
+Ejercicio_03_Sesión_01
+
+Lanza un dado 20000 veces y guarda la frecuencia de cada una de las 6 caras en un arreglo.
+
+import java.util.Random;
+
+public class LanDa {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int frecuencias[]= new int[6]; 
+
+        int lanzamientos = 20000;
+
+        //Simulamos lanzamiento del dado + actualización de frecuencia
+        for (int i = 0; i < lanzamientos; i++) {
+            int cara = random.nextInt(6) + 1;
+            frecuencias[cara - 1]++;
+        }
+
+        // Mostramos resultados
+        System.out.println("Los resultados después de hacer" + lanzamientos + " lanzamientos son:");
+        for (int i = 0; i < frecuencias.length; i++) {
+            System.out.println("Cara " + (i + 1) + ": " + frecuencias[i] + " veces");
+        }
+    }
+}
+
